@@ -1,4 +1,4 @@
-# Attach-EBS-Volume
+# Attaching an EBS Volume to an Instance
 
 AWS provides storage in various forms, including Elastic Block Store (EBS) and Instance Store.
 
