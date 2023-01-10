@@ -8,7 +8,7 @@ The usual pattern is to provision an EBS disk and attach it to an instance. Data
 
 In this lab, we will create an EBS volume and attach it to an instance. Note that we will not be formatting the disk or mounting the formatted disk on the instance in this lab.
 
-# Learning Objectives
+# Objectives
 
 1. Create an EBS volume using the AWS CLI
 2. Attach an EBS volume to an instance
