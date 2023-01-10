@@ -16,5 +16,5 @@ In this lab, we will create an EBS volume and attach it to an instance. Note tha
 
 The first of our scripts handles the prerequisites, creating a VPC, security group, rules, keys, and so on.
 ``` source ./1_create_resources.sh
-
+```
 
