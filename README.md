@@ -13,3 +13,8 @@ In this lab, we will create an EBS volume and attach it to an instance. Note tha
 1. Create an EBS volume using the AWS CLI
 2. Attach an EBS volume to an instance
 3. Modify and delete an EBS volume
+
+The first of our scripts handles the prerequisites, creating a VPC, security group, rules, keys, and so on.
+``` source ./1_create_resources.sh
+
+
