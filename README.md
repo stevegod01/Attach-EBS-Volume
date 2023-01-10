@@ -18,4 +18,7 @@ The first of our scripts handles the prerequisites, creating a VPC, security gro
 ```bash
 source ./1_create_resources.sh
 ```
-
+Once the resources have been created, let's create an instance by executing the 
+```bash
+source ./2_create_instance.sh 
+``` script:
