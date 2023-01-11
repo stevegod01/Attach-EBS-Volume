@@ -32,3 +32,11 @@ AVAILABILITY_ZONE=`aws ec2 describe-subnets --subnet-id $SUBNET_ID --query 'Subn
 
 echo The availability zone of the instance is: $AVAILABILITY_ZONE
 ```
+The following command creates a volume of 10 GB in the US East region:
+```bash
+aws ec2 create-volume --size 10 --availability-zone  $AVAILABILITY_ZONE --tag-specification 'ResourceType=volume,Tags=[{Key=Name,Value='"$username"'-volume}]'
+
+VOLUME_ID=`aws ec2 describe-volumes  --query "Volumes[0].VolumeId" --filters "Name=tag:Name,Values="$username"-volume" --output text`
+
+echo "Volume $VOLUME_ID was created successfully"
+```
