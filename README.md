@@ -52,3 +52,13 @@ echo Volume is: $VOLUME_ID
 ```Bash
 aws ec2 create-volume --volume-type gp3 --size 20 --availability-zone us-east-1a --tag-specifications 'ResourceType=volume,Tags=[{Key=Name,Value='"$username-gp3-volume"'}]'
 ```
+### Attaching a Volume to an Instance
+Let's use the following command to attach our volume to the instance:
+
+```bash
+echo "My volume ID is $VOLUME_ID"
+echo "My instance ID is $INSTANCE_ID"
+
+aws ec2 attach-volume --volume-id $VOLUME_ID --instance-id $INSTANCE_ID --device /dev/sdf
+```
+
