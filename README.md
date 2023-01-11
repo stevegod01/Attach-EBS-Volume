@@ -40,3 +40,10 @@ VOLUME_ID=`aws ec2 describe-volumes  --query "Volumes[0].VolumeId" --filters "Na
 
 echo "Volume $VOLUME_ID was created successfully"
 ```
+### Fetching Volume IDs
+We can also issue the describe-volumes command to verify whether the volume was created:
+```bash
+VOLUME_ID=`aws ec2 describe-volumes --query 'Volumes[*].VolumeId' --output text --filters 'Name=tag:Name,Values='"$username-volume"''`
+
+echo Volume is: $VOLUME_ID
+```
