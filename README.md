@@ -47,3 +47,8 @@ VOLUME_ID=`aws ec2 describe-volumes --query 'Volumes[*].VolumeId' --output text 
 
 echo Volume is: $VOLUME_ID
 ```
+### Create a general-purpose volume (type gp3) with 20 GB memory
+
+```Bash
+aws ec2 create-volume --volume-type gp3 --size 20 --availability-zone us-east-1a --tag-specifications 'ResourceType=volume,Tags=[{Key=Name,Value='"$username-gp3-volume"'}]'
+```
