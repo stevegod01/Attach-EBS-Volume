@@ -61,4 +61,24 @@ echo "My instance ID is $INSTANCE_ID"
 
 aws ec2 attach-volume --volume-id $VOLUME_ID --instance-id $INSTANCE_ID --device /dev/sdf
 ```
+```bash
+aws ec2 describe-volumes --query 'Volumes[*].VolumeId' --output text
+```
+### Modifying a Volume
+First, we need to fetch the volume ID using the describe-volumes command (note that we are choosing the first of the volumes from the list):
 
+```bash
+VOLUME_ID=`aws ec2 describe-volumes  --query "Volumes[0].VolumeId" --filters "Name=tag:Name,Values="$username"-volume" --output text`
+
+echo "Volume ID is  $VOLUME_ID"
+```
+If we want to know the current size of the disk, we can run the following command:
+```bash
+CURRENT_VOLUME_SIZE=`aws ec2 describe-volumes --volume-id $VOLUME_ID --filters "Name=tag:Name,Values="$username"-volume" --query 'Volumes[0].Size' --output text`
+
+echo "The current size of the volume is $CURRENT_VOLUME_SIZE GB"
+```
+Now that we have the volume ID and size, let's upsize the disk to 25 GB:
+```bash
+aws ec2 modify-volume --volume-id $VOLUME_ID --size 25
+```
