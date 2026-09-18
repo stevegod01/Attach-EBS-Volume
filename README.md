@@ -1,3 +1,13 @@
+# Historical exercise — maintained successor
+
+The maintained implementation and operating instructions are now in [high-availability-Udagram-webApp](https://github.com/stevegod01/high-availability-Udagram-webApp/tree/main/labs/ec2-apache-ebs). The consolidation preserves this repository's useful source, documentation and provenance. Keep this repository as historical reference; use the successor for current validation, verification and cleanup.
+
+No current deployment, original authorship, recovery guarantee or new license is implied. Historical commands below may have fixed paths, old image IDs or incomplete cleanup. Existing source and Git history are retained.
+
+---
+
+## Original notes
+
 # Attaching an EBS Volume to an Instance
 
 AWS provides storage in various forms, including Elastic Block Store (EBS) and Instance Store.
